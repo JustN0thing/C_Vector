@@ -6,6 +6,7 @@ void CVector_Init(CVector* v)
     v->id = 0;
     v->data = NULL;
     v->size = 0;
+    v->last = 0;
 }
 
 void CVector_Add(CVector* v, void *_data, int _index)
@@ -22,46 +23,80 @@ void CVector_Add(CVector* v, void *_data, int _index)
        
         if(_index >= v->size)
         {
-           v->size = _index;
+           v->size = _index;  
+           v->last = _index;       
            v->data = realloc(v->data,sizeof(void*)*v->size);           
         }
-     
+
+       
+
+        
           v->data[_index] = _data;         
           v->id++;
-      
+         
+          
+           
        
 }
 
 void* CVector_Front(CVector* v)
 {
+    if(v->size > 0)
     return v->data[0];
+
+    return 0;
 }
 
 void* CVector_Back(CVector* v)
 {
     if(v->size > 0)
     {
-        int last = ArraySize(v->data);
-        return v->data[last];
+          
+        return v->data[v->last-1];
     }else return 0;
 }
 
 
 void CVector_PushBack(CVector* v, void* _data)
 {
+        if(v->size == 0)
+        {
+            v->size = 10;
+            v->data = malloc(sizeof(void*)*v->size);            
+        }
+       
 
+        if(v->id == v->size)
+        {
+            v->size *= 2;
+            v->data = realloc(v->data,sizeof(void*)*v->size);
+        }
+        
+        v->data[v->id] = _data;
+        v->id++;
+        
+        
+           
+
+        
 }
 
 
-void CVector_IsEmpty(CVector* v, int _index)
+int CVector_IsEmpty(CVector* v, int _index)
 {
-    int count = 0;
+    if(v->data[_index] == '\0')
+    return 1;
 
-    for(int i = 0; i < v->size;i++)
+    return 0;    
+}
+
+void Show(CVector* v)
+{
+    for(int i = 0; i < v->id;i++)
     {
-        if(v->data[i] != 0)
-        printf("Vect[%d]:=%d\n",i, v->data[i]);
+        if(v->data[i]!= NULL)
+        {
+            printf("Vector[%d]:=%d \n",i,v->data[i]);
+        }
     }
-
-    
 }
