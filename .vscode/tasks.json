@@ -8,7 +8,7 @@
             "type": "shell",
             "command": "gcc",
            //With debug info
-            "args": ["-g","CVector.h","CVector.c","-o","Test.exe"]
+            "args": ["-g","CVector.h","CVector.c","main.c","-o","Test.exe"]
             
         }
     ]
