@@ -8,6 +8,7 @@
 #include <string.h>
 
 #define ArraySize(x) (sizeof(x)/sizeof(x[0]))
+#define Empty -0x45520FF3
 
 //Implementation of Array
 typedef struct _vector
@@ -15,7 +16,7 @@ typedef struct _vector
     int id;
     void** data;
     size_t size;    
-    int last;
+   
 }CVector;
 
 
