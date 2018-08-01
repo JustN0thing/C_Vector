@@ -7,8 +7,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define ArraySize(x) (sizeof(x)/sizeof(x[0]))
-#define Empty -0x45520FF3
+#define ArraySize(x) ((sizeof(x))/(sizeof(x[0]))
+#define NULL_ELEMENT -0x45520FF3
 
 //Implementation of Array
 typedef struct _vector
@@ -26,12 +26,13 @@ void* CVector_Front(CVector* v);    //Getting first elemetn of array
 void* CVector_Back(CVector* v); //Getting last element of array
 void CVector_PushBack(CVector* v , void*);  //Adding element in the end of array
 void CVector_PopBack(CVector*v);    //Deleting last element in array
-int CVector_IsEmpty(CVector*v,int _index); 
+int CVector_IsEmpty(CVector*v,int _index); //Checking for the empty element of array
 void CVector_Delete(CVector* v , int _index); //Delete element by the index
+void CVector_Clean(CVector* v); //Clean all array
 void* CVector_Get(CVector* v, int _index);  //Getting element by the index
 void CVector_Assign(CVector* v, int _count, void* _data); //Assing a count of data in array
 void CVector_Free(CVector* v);  //Free memory which is was allocated for array
 
-void Show(CVector* v);
+void Show(CVector* v); //Just for testing
 
 #endif
