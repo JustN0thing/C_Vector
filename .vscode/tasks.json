@@ -9,7 +9,8 @@
             "command": "gcc",
            //With debug info
             "args": ["-g","CVector.h","CVector.c","main.c","-o","Test.exe"]
-            
+           //Just build
+           //"args": ["CVector.h","CVector.c","main.c","-o","Test.exe"]
         }
     ]
 }
