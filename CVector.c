@@ -60,7 +60,7 @@ void* CVector_Back(CVector* v)
 }
 
 
-void CVector_PushBack(CVector* v, void* _data) //This algoripthm works similar to CVetor_Add
+void CVector_PushBack(CVector* v, void* _data) //This algorithm works similar to CVetor_Add
 {
         if(v->size == 0)
         {
