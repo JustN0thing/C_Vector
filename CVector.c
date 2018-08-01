@@ -81,6 +81,14 @@ void CVector_PushBack(CVector* v, void* _data) //This algorithm works similar to
         
 }
 
+void CVector_Assign(CVector* v,int _count, void* _data)
+{
+       for(int j = v->id;j<=_count;j++)
+       {           
+           CVector_PushBack(v,_data);               
+       }
+}
+
 //warning  "pointer and int comparsion"
 void CVector_PopBack(CVector* v) //Deleting last element
 {
