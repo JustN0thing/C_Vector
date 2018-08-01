@@ -16,15 +16,16 @@ int main()
     CVector_Add(&vect,0xc1,13); 
     CVector_Add(&vect,200,14); 
     CVector_Add(&vect,200,24); 
-     CVector_Add(&vect,5000,56); 
+     CVector_Add(&vect,-5000,56); 
     CVector_Add(&vect,2000,54); 
-    CVector_PopBack(&vect);
+   // CVector_PopBack(&vect);
+   // CVector_Clean(&vect);
      
    
 
   
-    int a = (int)CVector_Front(&vect);
-    int b = (int)CVector_Back(&vect);
+    int a = CVector_Front(&vect);
+    int b = CVector_Back(&vect);
 
     
     
