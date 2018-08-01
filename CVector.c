@@ -45,9 +45,10 @@ void* CVector_Back(CVector* v)
 
     if(v->size > 0)
     {
+     
      for(int i = 0; i < v->size;i++)
         {
-            if(v->data[i] != Empty)
+            if(CVector_Get(v,i) != NULL_ELEMENT)
             {
                 last=i;
             }
@@ -88,7 +89,7 @@ void CVector_PopBack(CVector* v)
     {
      for(int i = 0; i < v->size;i++)
         {
-            if(v->data[i] != Empty)
+            if(CVector_Get(v,i) != NULL_ELEMENT)
             {
                 last=i;
             }
@@ -99,12 +100,34 @@ void CVector_PopBack(CVector* v)
 
     if(!CVector_IsEmpty(v,last))
     {
-            v->data[last] = NULL;
+            v->data[last] = NULL_ELEMENT;
             v->size--;
             v->id --;
 
             v->data = realloc(v->data,sizeof(void*)*v->size);
     }
+}
+
+
+void CVector_Delete(CVector* v, int _index)
+{
+      if(v->size > 0 && v->id > 0)
+      {
+          v->data[_index] = NULL_ELEMENT;
+          v->size--;
+          v->id--;
+
+          v->data = realloc(v->data,sizeof(void*)*v->size);
+      }  
+}
+
+void CVector_Clean(CVector* v)
+{
+    v->data = NULL;
+    v->size = 0;
+    v->id = 0;
+
+    v->data = malloc(sizeof(void*)*v->size);
 }
 
 
@@ -115,17 +138,22 @@ void* CVector_Get(CVector* v, int _index)
 
 int CVector_IsEmpty(CVector* v, int _index)
 {
-    if(v->data[_index] == Empty)
+    if(v->data[_index] == NULL_ELEMENT)
     return 1;
 
     return 0;    
+}
+
+void CVector_Free(CVector* v)
+{
+    free(v);
 }
 
 void Show(CVector* v)
 {
     for(int i = 0; i < v->size;i++)
     {
-        if(v->data[i] != Empty)
+        if(v->data[i] != NULL_ELEMENT)
         {
             printf("Vector[%d]:=%d \n",i,v->data[i]);
         }
