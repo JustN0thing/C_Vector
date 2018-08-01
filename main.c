@@ -24,7 +24,7 @@ int main()
    
 
   
-    int a = CVector_Front(&vect);
+    int a = CVector_Front(&vect);// for good style im really must use int cast
     int b = CVector_Back(&vect);
 
     
