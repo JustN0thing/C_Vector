@@ -80,6 +80,34 @@ void CVector_PushBack(CVector* v, void* _data)
 }
 
 
+void CVector_PopBack(CVector* v)
+{
+    int last = 0;
+
+    if(v->id >= 0)
+    {
+     for(int i = 0; i < v->size;i++)
+        {
+            if(v->data[i] != Empty)
+            {
+                last=i;
+            }
+        }
+
+       
+    }
+
+    if(!CVector_IsEmpty(v,last))
+    {
+            v->data[last] = NULL;
+            v->size--;
+            v->id --;
+
+            v->data = realloc(v->data,sizeof(void*)*v->size);
+    }
+}
+
+
 void* CVector_Get(CVector* v, int _index)
 {
     return v->data[_index];
