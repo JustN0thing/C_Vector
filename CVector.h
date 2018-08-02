@@ -45,7 +45,7 @@ void* CVector_Get(CVector* v, int _index);//Getting element by the index
 
 void CVector_Assign(CVector* v, int _count, void* _data);//Assing a count of data in array
 
-void CVector_Free(CVector* v);//Free memory which  was allocated for array
+void CVector_Free(CVector* v);//Free memory which  was allocated for array, alway use when stop using struct
 
 void Show(CVector* v); //Just for testing
 

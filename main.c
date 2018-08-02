@@ -16,8 +16,6 @@ int main()
     CVector_Fit(&vect);
     printf("Size after fit:%d  \n", CVector_Capacity(&vect));
    
-   
-   
       
      
 
