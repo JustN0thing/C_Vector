@@ -6,7 +6,8 @@ First of all i started from std::vector and him methods.
 
 In this moment realized next things:
 
-Creating variable with "CVector" type;
-Adding,PushBack,Delete,Clean functions also added;
-Created struct store data with different type(with warnings of course);
-Dynamic reallocation of memory for data array;
+Creating variable with "CVector" type,
+Adding,PushBack,Delete,Clean functions also added,
+created struct store data with different types(with warnings of course), 
+dynamic reallocation of memory for data array , memory optimization
+
