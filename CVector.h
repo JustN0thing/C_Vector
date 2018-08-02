@@ -53,7 +53,7 @@ void Show(CVector* v); //Just for testing
 
 //Additional functions///////////////////////////////////////////////////////////////////
 
-void CVector_CopyToArray(CVector* v,void** _arr);//Copy v->data to destination _arr
+void CVector_ToArray(CVector* v,void** _arr);//Copy v->data to destination _arr
 
 int CVector_Size(CVector* v); //Return count of elements in array
 

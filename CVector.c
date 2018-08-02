@@ -145,7 +145,7 @@ void* CVector_Get(CVector* v, int _index)
 }
 
 //Didn't work yet
-void CVector_CopyToArray(CVector* v, void** _arr)
+void CVector_ToArray(CVector* v, void** _arr)
 {
    if(v->id >= 0)
     {
