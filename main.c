@@ -3,29 +3,27 @@
 
 int main()
 {
-    int a [12];
-    CVector vect,vv;
-    void** arr;
+    
+    CVector vect;
+
 
   
-    CVector_Init(&vect);
-    CVector_Init(&vv);
-   CVector_PushBack(&vect,5);
-    CVector_Assign(&vect,10,10);
-    CVector_PushBack(&vect,20);
+    CVector_Init(&vect);    
+  
+    CVector_Assign(&vect,15,10);
     
-    CVector_Assign(&vv,15,250);
+    printf("Size before fit:%d  \n", CVector_Capacity(&vect));
+    CVector_Fit(&vect);
+    printf("Size after fit:%d  \n", CVector_Capacity(&vect));
    
-    CVector_Swap(&vv,&vect);
+   
    
       
-        CVector_ToArray(&vv,&a);
+     
 
-        for(int i = 0; i<12;i++)
-        printf("a[%d]:=%d\n",i,a[i]);
         
     
-    //Show(&vect);
+    Show(&vect);
     _getch();
     return 0;
 }
