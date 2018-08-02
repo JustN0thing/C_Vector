@@ -10,18 +10,16 @@ int main()
   
     CVector_Init(&vect);    
   
-    CVector_Assign(&vect,15,10);
+    CVector_Assign(&vect,15,'1');
     
-    printf("Size before fit:%d  \n", CVector_Capacity(&vect));
-    CVector_Fit(&vect);
-    printf("Size after fit:%d  \n", CVector_Capacity(&vect));
+   printf("%c",CVector_Get(&vect,1));
    
       
      
 
         
     
-    Show(&vect);
+   
     _getch();
     return 0;
 }

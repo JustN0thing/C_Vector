@@ -11,7 +11,7 @@ void CVector_Init(CVector* v)
    
 }
 
-void CVector_Add(CVector* v, void *_data, int _index)
+void CVector_Add(CVector* v, void* restrict _data, int _index)
 {                     
         if(v->size == 0) //Checking the size variable of our struct
         {
@@ -59,7 +59,7 @@ void* CVector_Back(CVector* v)
 }
 
 
-void CVector_PushBack(CVector* v, void* _data) //This algorithm works similar to CVetor_Add
+void CVector_PushBack(CVector* v, void* restrict  _data) //This algorithm works similar to CVetor_Add
 {
         if(v->size == 0)
         {
@@ -80,7 +80,7 @@ void CVector_PushBack(CVector* v, void* _data) //This algorithm works similar to
         
 }
 
-void CVector_Assign(CVector* v,int _count, void* _data)
+void CVector_Assign(CVector* v,int _count, void* restrict _data)
 {
      for(int j = 0; j < _count;++j)
      {
@@ -144,7 +144,7 @@ void* CVector_Get(CVector* v, int _index)
 }
 
 //Didn't work yet
-void CVector_ToArray(CVector* v, void** _arr)
+void CVector_ToArray(CVector* v, void** restrict _arr)
 {
    if(v->id >= 0)
     {
