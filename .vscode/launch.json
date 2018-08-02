@@ -5,17 +5,17 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "C/C++ Compile & Run",
+            "name": "C/C++ Compile",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/Test.exe",
+            "program": " ${workspaceFolder}/Test.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": true,
             "MIMode": "gdb",
-            "miDebuggerPath": "D:/Programs/MinGw/bin/gdb.exe",
+            "miDebuggerPath": "D:/Programs/MinGW/bin/gdb.exe",
             "preLaunchTask": "Compile",
             "setupCommands": [
                 {
