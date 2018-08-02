@@ -10,9 +10,9 @@ int main()
   
     CVector_Init(&vect);    
   
-    CVector_Assign(&vect,15,'1');
+    CVector_Assign(&vect,15,55);
     
-   printf("%c",CVector_Get(&vect,1));
+   printf("%d",CVector_Get(&vect,1));
    
       
      

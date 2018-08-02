@@ -80,7 +80,7 @@ void CVector_PushBack(CVector* v, void* restrict  _data) //This algorithm works 
         
 }
 
-void CVector_Assign(CVector* v,int _count, void* restrict _data)
+void CVector_Assign(CVector* v,int _count, void* restrict  _data)
 {
      for(int j = 0; j < _count;++j)
      {
