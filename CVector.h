@@ -1,4 +1,11 @@
 //Author Artem Yagnuk 2018
+
+
+//This dynamic data struct in this moment works !only! with next variable types:
+//1)int
+//2)char
+//3)char* (string)
+
 #pragma once
 
 #ifndef _C_VECTOR_H
