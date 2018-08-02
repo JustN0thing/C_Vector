@@ -103,9 +103,7 @@ void CVector_PopBack(CVector* v) //Deleting last element
             {
                 last=i;
             }
-        }
-
-       
+        }       
     }
 
     if(!CVector_IsEmpty(v,last)) 
@@ -144,6 +142,40 @@ void CVector_Clean(CVector* v) // Clean all array
 void* CVector_Get(CVector* v, int _index)
 {
     return v->data[_index];
+}
+
+//Didn't work yet
+void CVector_CopyToArray(CVector* v, void** _arr)
+{
+   if(v->id >= 0)
+    {
+     for(int i = 0; i < v->size;i++)
+        {
+            if(CVector_Get(v,i) != NULL_ELEMENT) //if last elemnt isn't garbage we take him index in array
+            {
+               _arr[i] = v->data[i];
+            }
+        }       
+    }
+}
+
+int CVector_Size(CVector* v){return v->id;} //Return count of elements in array
+
+size_t CVector_Capacity(CVector* v){return v->size;} // Return capacity of data array
+
+void CVector_Reserve(CVector* v, size_t _size)
+{
+    if(v->size == 0)
+    {
+        v->data = malloc(sizeof(void*)*_size);
+        v->size = _size;
+    }
+    
+    if(_size > v->size)
+    {
+        v->data = realloc(v->data,sizeof(void*)*_size);
+        v->size = _size;
+    } 
 }
 
 //warning  "pointer and int comparsion"

@@ -53,13 +53,13 @@ void Show(CVector* v); //Just for testing
 
 //Additional functions///////////////////////////////////////////////////////////////////
 
-void** CVector_GetData(CVector* v);//Return v->data array
+void CVector_CopyToArray(CVector* v,void** _arr);//Copy v->data to destination _arr
 
 int CVector_Size(CVector* v); //Return count of elements in array
 
 size_t CVector_Capacity(CVector* v);//Returns capacity of data array
 
-void CVector_Reserve(CVector* v); // Reserve memory manualy
+void CVector_Reserve(CVector* v, size_t _size); // Reserve memory manualy
 
 ///////////////////////////////////////////////////////////////////////////////////////
 
