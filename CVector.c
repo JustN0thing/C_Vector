@@ -1,4 +1,5 @@
 //Author Artem Yagnuk 2018
+
 #include "CVector.h"
 
 
@@ -27,10 +28,7 @@ void CVector_Add(CVector* v, void *_data, int _index)
         }
 
           v->data[_index] = _data;         // adding elemetn in array
-          v->id++; //increase element id
-         
-          
-           
+          v->id++; //increase element id          
        
 }
 
@@ -176,6 +174,26 @@ void CVector_Reserve(CVector* v, size_t _size)
         v->data = realloc(v->data,sizeof(void*)*_size);
         v->size = _size;
     } 
+}
+
+void CVector_Swap(CVector* src,CVector* _dest)
+{
+    CVector* buff;   
+   
+    if(_dest->size < src->size)
+    {
+        _dest->data = realloc(_dest->data,sizeof(void*)*src->size);
+         src->data = realloc(src->data,sizeof(void*)*_dest->size);
+        _dest->size = src->size;
+         src->size = _dest->size ;
+    }   
+
+    buff = _dest;
+    _dest = src;
+    src = buff;
+
+    CVector_Clean(&buff);
+    CVector_Free(&buff);
 }
 
 //warning  "pointer and int comparsion"
