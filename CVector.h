@@ -63,6 +63,8 @@ void CVector_Reserve(CVector* v, size_t _size); // Reserve memory manualy
 
 void CVector_Swap(CVector* src,CVector* _dest); //Swap data from src with _dest
 
+void CVector_Fit(CVector* v); //Free unused allocated memory in data array
+
 ///////////////////////////////////////////////////////////////////////////////////////
 
 

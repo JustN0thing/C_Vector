@@ -210,6 +210,25 @@ void CVector_Free(CVector* v)
     free(v); // free memory whats was allocated for array
 }
 
+void CVector_Fit(CVector* v)
+{
+    size_t _size = 0;
+
+    if(v->id >= 0)
+    {
+     for(int i = 0; i < v->size;i++)
+        {
+            if(CVector_Get(v,i) != NULL_ELEMENT) //if last elemnt isn't garbage we take him index in array
+            {
+                _size=i;
+            }
+        }       
+    }
+
+    v->data = realloc(v->data,sizeof(void*)*_size);
+    v->size = _size;
+}
+
 void Show(CVector* v)
 {
     for(int i = 0; i < v->size;i++)
